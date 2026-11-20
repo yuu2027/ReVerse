@@ -1,0 +1,8 @@
+{
+	"name": "ReVerse.Core",
+	"rootNamespace": "ReVerse.Core",
+	"autoReferenced": false,
+	"references": [
+		"Unity.TextMeshPro"
+	]
+}

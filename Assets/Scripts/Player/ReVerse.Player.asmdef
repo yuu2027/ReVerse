@@ -1,0 +1,9 @@
+{
+	"name": "ReVerse.Player",
+	"rootNamespace": "ReVerse.Player",
+	"autoReferenced": false,
+	"references": [
+        "Unity.InputSystem",
+		"ReVerse.Core"
+    ]
+}
