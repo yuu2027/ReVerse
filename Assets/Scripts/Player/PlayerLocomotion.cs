@@ -15,11 +15,10 @@ namespace ReVerse.Player
         [Header("移動速度")]
         [SerializeField] private float _angularSpeed = 2.0f;
 
-
         private PlayerInputReader _input;
         private ReverseController _reverse;
 
-        private float _currentAngle = 0.0f;
+        private float _currentAngle = 3 * Mathf.PI / 2f;
         private int _sign = 1;
 
 
@@ -27,6 +26,11 @@ namespace ReVerse.Player
         {
             _input = GetComponent<PlayerInputReader>();
             _reverse = GetComponent<ReverseController>();
+        }
+
+        private void Start()
+        {
+            transform.position = MoveDirection(_currentAngle);
         }
 
         private void Update()
@@ -47,9 +51,7 @@ namespace ReVerse.Player
             transform.position = direction;
         }
 
-        /// <summary>
-        /// 極座標変換を行い、移動方向を取得
-        /// </summary>
+        // 極座標変換を行い、移動方向を取得
         private Vector3 MoveDirection(float angle)
         {
             float x = _centerPoint.position.x + _radius * Mathf.Cos(angle);

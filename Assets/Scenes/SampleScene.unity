@@ -332,6 +332,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &302331084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 302331086}
+  - component: {fileID: 302331085}
+  - component: {fileID: 302331087}
+  m_Layer: 0
+  m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &302331085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302331084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7880a110f4f7a80429cf3c160a8987e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ReVerse.Bullet::ReVerse.Bullet.BulletPooling
+  _settings:
+  - Type: 0
+    Prefab: {fileID: 8376662818182233693, guid: 066c406a64a84134a8da87f9b58fdf31, type: 3}
+    InitialSize: 60
+    MaxSize: 300
+  - Type: 1
+    Prefab: {fileID: 8376662818182233693, guid: f70050928d0dfad46bbff55c626c4b76, type: 3}
+    InitialSize: 60
+    MaxSize: 300
+  - Type: 2
+    Prefab: {fileID: 8376662818182233693, guid: bc19b69a9d0fb054ba42dd84bea9572f, type: 3}
+    InitialSize: 60
+    MaxSize: 300
+--- !u!4 &302331086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302331084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &302331087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302331084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8a157a453951a48a953b2895e88ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ReVerse.Bullet::ReVerse.Bullet.BulletPattern
+  _playerPos: {fileID: 2145263205}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1032715258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -720,7 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f28fe17e74b8a14a9d222eba38b5461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ReVerse.Core::ReVerse.Core.GameManager
-  _timeText: {fileID: 0}
+  _timeText: {fileID: 1956074786}
 --- !u!4 &1134346808
 Transform:
   m_ObjectHideFlags: 0
@@ -730,7 +801,7 @@ Transform:
   m_GameObject: {fileID: 1134346806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03827, y: -0.07366, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -839,7 +910,7 @@ GameObject:
   - component: {fileID: 1956074787}
   - component: {fileID: 1956074786}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1001,7 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLocomotion
   _centerPoint: {fileID: 261659670}
-  _radius: 2
+  _radius: 4
   _angularSpeed: 2
 --- !u!114 &2145263203
 MonoBehaviour:
@@ -1054,7 +1125,7 @@ Transform:
   m_GameObject: {fileID: 2145263201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1169,8 +1240,9 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1134346808}
+  - {fileID: 302331086}
   - {fileID: 261659670}
   - {fileID: 2145263205}
-  - {fileID: 1032715260}
   - {fileID: 223436192}
   - {fileID: 267988748}
+  - {fileID: 1032715260}
